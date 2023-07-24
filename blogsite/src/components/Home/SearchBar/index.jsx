@@ -9,7 +9,7 @@ const SearchBar = ({value, handleSearchKey, clearSearch, formSubmit}) => {
         <button type="submit">Go</button>
     </form>
     </div>
-  )
+  ) 
 }
 
 export default SearchBar
