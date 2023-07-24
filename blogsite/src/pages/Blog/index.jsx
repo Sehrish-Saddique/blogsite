@@ -12,9 +12,7 @@ import './style.css'
         if(blog){
             setBlog(blog);
         }
-        else{
-            <p>Hello i am danger</p>
-        }
+         
         
     },[id]);
   return (
