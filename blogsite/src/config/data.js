@@ -82,6 +82,5 @@ export const blogList = [
       authorName: 'John Doe',
       authorAvatar: '/assets/images/author7.jpg',
       createdAt: 'June 03, 2021',
-      cover: '/assets/images/blog6.jpg',
-    },
+     },
   ];
