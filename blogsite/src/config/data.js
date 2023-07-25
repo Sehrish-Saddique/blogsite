@@ -9,7 +9,7 @@ export const blogList = [
       authorName: 'John Doe',
       authorAvatar: '/assets/images/author1.jpg',
       createdAt: 'June 03, 2021',
-      cover: '/assets/images/blog.jpg',
+      cover: '/assets/images/blog1.jpg',
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ export const blogList = [
       authorName: 'John Doe',
       authorAvatar: '/assets/images/author4.jpg',
       createdAt: 'June 03, 2021',
-      cover: '/assets/images/blog3.jpg',
+      cover: '/assets/images/blog2.jpg',
     },
     {
       id: 5,
@@ -80,7 +80,7 @@ export const blogList = [
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       authorName: 'John Doe',
-      authorAvatar: '/assets/images/author7.jpg',
+      authorAvatar: '/assets/images/author4.jpg',
       createdAt: 'June 03, 2021',
       cover: '/assets/images/blog6.jpg',
     },

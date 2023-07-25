@@ -65,7 +65,7 @@ export const Quill = () => {
      }
   return (
     <>
-    <div>index quill
+    <div> <br/>
     <ReactQuill
     value={text}
     ref={ref}
