@@ -4,7 +4,10 @@ import SearchBar from '../../components/Home/SearchBar';
 import BlogList from '../../components/Home/BlogList';
 import {blogList} from '../../config/data';
 import EmptyList from '../../components/common/EmptyList';
- const Home = () => {
+import {Quill} from '../../components/Home/BlogList/BlogItem/Quill/index.jsx';
+import Blog from '../Blog';
+
+const Home = () => {
     const[blogs,setBlogs]= useState(blogList);
     const [searchKey , setSearchKey] = useState('');
     // Submit
@@ -23,11 +26,27 @@ import EmptyList from '../../components/common/EmptyList';
         setSearchKey('');
         setBlogs(blogList);
     }
+    const style={
+      backgroundColor: 'red',
+      width: '100px', 
+      height: '100px'   
+    }
+    function handlepost  ()   {
+      alert('clicked');
+      <div style={style}>
+         <Quill />
+      </div>
+     
+    }
   return (
     <div> 
     {/* Page header */}
 
     <Header/>
+
+    {/* Buuton for add blog */}
+    <button onClick={handlepost}>Add post</button>
+    
     {/* Search Bar */}
     <SearchBar 
     value={searchKey} 
@@ -35,7 +54,11 @@ import EmptyList from '../../components/common/EmptyList';
     formSubmit={handleSearchBar} 
     handleSearchKey={ (e) => setSearchKey(e.target.value)}/>
     {/* BLogList and EmptyList */}
+    
+
     {!blogs.length ? <EmptyList/> :<BlogList blogs={blogs}/>}
+
+    <Blog/>
     </div>
   )
 };

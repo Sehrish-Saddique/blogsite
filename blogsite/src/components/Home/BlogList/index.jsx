@@ -1,12 +1,12 @@
 import React from 'react'
 import BlogItem from './BlogItem'
 import './style.css' 
-const index = ({blogs}) => {
+const BlogList = ({blogs}) => {
   return (
     <div className='blogList-wrap'>
-        {blogs.map(blog=><BlogItem blog={blog} key={blog.id}/>)}
+        {blogs.map(blog=><BlogItem blog={blog}/>)}
     </div>
   )
 }
 
-export default index
+export default BlogList
