@@ -15,6 +15,8 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer'); //importing multer for file upload
 const {transporter}= require('../nodemailer/nodemailer')
+const {connection}=require('../database/sql')
+
 
 var storage = multer.diskStorage({
   destination:function(req,file,cb){ //destination for file upload
@@ -45,17 +47,31 @@ router.post('/',upload.single('profileimage'), function(req, res, next) {
       
     }
     mailOption.returnInfo = true;
-
-    transporter.sendMail(mailOption,(error,info)=>{
+    const data={
+      Name:name,
+      Email:email,
+      Password:password,
+      Image:file
+    }
+      connection.query(`INSERT INTO Register SET ?`,data ,(err,result)=>{
+        if(err){
+          console.log(err);
+        }else{
+          console.log("Data has been inserted");
+          res.redirect('http://localhost:3000/');
+          transporter.sendMail(mailOption,(error,info)=>{
       
-         if (error) {
-          throw error; // Handle the error, or use proper error handling instead of throwing.
-        } else {
-          // Access the 'info' object to get information about the sent email
-          console.log("Email sent: " + info.response); // 'info.response' contains the response message from the email server.
-          //
-       
-    }});
+            if (error) {
+             throw error; // Handle the error, or use proper error handling instead of throwing.
+           } else {
+             // Access the 'info' object to get information about the sent email
+             console.log("Email sent: " + info.response); // 'info.response' contains the response message from the email server.
+             //
+          
+       }});
+        }
+      })
+    
     console.log(name,password,file);
    
 
