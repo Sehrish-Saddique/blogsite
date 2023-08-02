@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { blogList } from '../../config/data';
 import Chip from '../../components/common/Chip';
 import EmptyList from '../../components/common/EmptyList';

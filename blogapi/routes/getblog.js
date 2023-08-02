@@ -2,7 +2,7 @@ const express=require('express'); //To require express module node js
 const router=express.Router();
 const {connection}=require('../database/sql')
 router.get('/', (req, res) => {
-    connection.query(`SELECT * FROM Register`, (err, result) => {
+    connection.query(`SELECT * FROM Blog`, (err, result) => {
         if (err) {
             console.error("Error executing query:", err);
             res.status(500).json({ error: "Internal Server Error" });
@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
             res.json(result);
         }
     });
-     
 });
 
 module.exports = router;

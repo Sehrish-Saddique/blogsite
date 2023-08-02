@@ -8,9 +8,11 @@ const cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var regRouter =require('./routes/register');
+var BlogRouter =require('./routes/Blog');
 var getusersRouter =require('./routes/getusers');
+var getBlogRouter =require('./routes/getblog');
 const database = require('./database/sql');
-var app = express();
+ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,11 +36,13 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/register' , regRouter ); 
 app.use('/getusers' , getusersRouter ); 
+app.use('/Blog' , BlogRouter ); 
+app.use('/getblog' , getBlogRouter );
  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
- console.log("gaib ho jao bhai");
+ console.log("Hello dear, i am 404 error, i am not found");
 });
 
 // error handler

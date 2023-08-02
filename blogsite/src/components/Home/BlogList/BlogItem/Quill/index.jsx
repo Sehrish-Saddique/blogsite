@@ -3,6 +3,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './style.css'
 import { useRef,useState } from 'react';
+  
+
 
 export const Quill = () => {
     const ref = useRef(null);
@@ -65,7 +67,10 @@ export const Quill = () => {
      }
   return (
     <>
+    <form  action="http://localhost:4001/Blog" method="post" encType='multipart/form-data'>
+
     <div> <br/>
+    
     <ReactQuill
     value={text}
     ref={ref}
@@ -76,7 +81,9 @@ export const Quill = () => {
     theme='snow'
     />
     </div>
-    <HtmlTotext htmlcode={text}/>
+     <HtmlTotext htmlcode={text}/>
+     <button type="submit">Submit</button>
+    </form>
 
     </>
   )
